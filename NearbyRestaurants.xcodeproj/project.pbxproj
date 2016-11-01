@@ -7,15 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BD100D7C1DC8C69F000C7A09 /* NearbyPlaces.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD100D7A1DC8C680000C7A09 /* NearbyPlaces.framework */; };
+		BD100D7D1DC8C69F000C7A09 /* NearbyPlaces.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BD100D7A1DC8C680000C7A09 /* NearbyPlaces.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		BD100D7E1DC8C6BC000C7A09 /* NearbyPlaces.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD100D7A1DC8C680000C7A09 /* NearbyPlaces.framework */; };
 		BD21F0891DBBC28E00ECA962 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BD21F0881DBBC28E00ECA962 /* Info.plist */; };
 		BDB1C4661DB8A71200253E7A /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDB1C4651DB8A71200253E7A /* NotificationCenter.framework */; };
 		BDB1C4691DB8A71200253E7A /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDB1C4681DB8A71200253E7A /* TodayViewController.swift */; };
 		BDB1C46C1DB8A71300253E7A /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BDB1C46A1DB8A71300253E7A /* MainInterface.storyboard */; };
 		BDB1C4701DB8A71300253E7A /* NearbyRestaurantsTodayExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = BDB1C4641DB8A71200253E7A /* NearbyRestaurantsTodayExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		BDB85D191DB62A42008F0E1E /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDB85D181DB62A42008F0E1E /* CoreLocation.framework */; };
-		BDFD33BD1DBBC03400104198 /* NearbyPlaces.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDEC24461DB73D510073C908 /* NearbyPlaces.framework */; };
-		BDFD33BE1DBBC04500104198 /* NearbyPlaces.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDEC24461DB73D510073C908 /* NearbyPlaces.framework */; };
-		BDFD33BF1DBBC04500104198 /* NearbyPlaces.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BDEC24461DB73D510073C908 /* NearbyPlaces.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		BDFD33E41DBBC16900104198 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BDFD33D71DBBC16900104198 /* LaunchScreen.storyboard */; };
 		BDFD33E51DBBC16900104198 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BDFD33D91DBBC16900104198 /* Main.storyboard */; };
 		BDFD33E61DBBC16900104198 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BDFD33DB1DBBC16900104198 /* Assets.xcassets */; };
@@ -35,20 +35,6 @@
 			proxyType = 1;
 			remoteGlobalIDString = BDB1C4631DB8A71200253E7A;
 			remoteInfo = NearbyRestaurantsTodayExtension;
-		};
-		BDEC24451DB73D510073C908 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BDEC24411DB73D500073C908 /* NearbyPlaces.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = BDE312D51DB6312B00BA431E;
-			remoteInfo = NearbyPlaces;
-		};
-		BDFD33C01DBBC04500104198 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BDEC24411DB73D500073C908 /* NearbyPlaces.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = BDE312D41DB6312B00BA431E;
-			remoteInfo = NearbyPlaces;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -70,7 +56,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				BDFD33BF1DBBC04500104198 /* NearbyPlaces.framework in Embed Frameworks */,
+				BD100D7D1DC8C69F000C7A09 /* NearbyPlaces.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -78,6 +64,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		BD100D7A1DC8C680000C7A09 /* NearbyPlaces.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = NearbyPlaces.framework; sourceTree = "<group>"; };
 		BD21F0881DBBC28E00ECA962 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BDB1C4641DB8A71200253E7A /* NearbyRestaurantsTodayExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = NearbyRestaurantsTodayExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		BDB1C4651DB8A71200253E7A /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
@@ -86,7 +73,6 @@
 		BDB1C46D1DB8A71300253E7A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BDB85CF91DB627A6008F0E1E /* NearbyRestaurants.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NearbyRestaurants.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BDB85D181DB62A42008F0E1E /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
-		BDEC24411DB73D500073C908 /* NearbyPlaces.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = NearbyPlaces.xcodeproj; path = ../NearbyPlaces/NearbyPlaces.xcodeproj; sourceTree = "<group>"; };
 		BDFD33D81DBBC16900104198 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BDFD33D91DBBC16900104198 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		BDFD33DB1DBBC16900104198 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -107,7 +93,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BDB1C4661DB8A71200253E7A /* NotificationCenter.framework in Frameworks */,
-				BDFD33BD1DBBC03400104198 /* NearbyPlaces.framework in Frameworks */,
+				BD100D7E1DC8C6BC000C7A09 /* NearbyPlaces.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -116,7 +102,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BDB85D191DB62A42008F0E1E /* CoreLocation.framework in Frameworks */,
-				BDFD33BE1DBBC04500104198 /* NearbyPlaces.framework in Frameworks */,
+				BD100D7C1DC8C69F000C7A09 /* NearbyPlaces.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -137,7 +123,6 @@
 		BDB85CF01DB627A6008F0E1E = {
 			isa = PBXGroup;
 			children = (
-				BDEC24411DB73D500073C908 /* NearbyPlaces.xcodeproj */,
 				BDB85CFB1DB627A6008F0E1E /* NearbyRestaurants */,
 				BDB1C4671DB8A71200253E7A /* NearbyRestaurantsTodayExtension */,
 				BDB85CFA1DB627A6008F0E1E /* Products */,
@@ -170,18 +155,11 @@
 		BDB85D171DB62A42008F0E1E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				BD100D7A1DC8C680000C7A09 /* NearbyPlaces.framework */,
 				BDB85D181DB62A42008F0E1E /* CoreLocation.framework */,
 				BDB1C4651DB8A71200253E7A /* NotificationCenter.framework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		BDEC24421DB73D500073C908 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				BDEC24461DB73D510073C908 /* NearbyPlaces.framework */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 		BDFD33D61DBBC16900104198 /* Storyboard */ = {
@@ -256,7 +234,6 @@
 			);
 			dependencies = (
 				BDB1C46F1DB8A71300253E7A /* PBXTargetDependency */,
-				BDFD33C11DBBC04500104198 /* PBXTargetDependency */,
 			);
 			name = NearbyRestaurants;
 			productName = NearbyRestaurants;
@@ -306,12 +283,6 @@
 			mainGroup = BDB85CF01DB627A6008F0E1E;
 			productRefGroup = BDB85CFA1DB627A6008F0E1E /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = BDEC24421DB73D500073C908 /* Products */;
-					ProjectRef = BDEC24411DB73D500073C908 /* NearbyPlaces.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				BDB85CF81DB627A6008F0E1E /* NearbyRestaurants */,
@@ -319,16 +290,6 @@
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXReferenceProxy section */
-		BDEC24461DB73D510073C908 /* NearbyPlaces.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = NearbyPlaces.framework;
-			remoteRef = BDEC24451DB73D510073C908 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		BDB1C4621DB8A71200253E7A /* Resources */ = {
@@ -383,11 +344,6 @@
 			target = BDB1C4631DB8A71200253E7A /* NearbyRestaurantsTodayExtension */;
 			targetProxy = BDB1C46E1DB8A71300253E7A /* PBXContainerItemProxy */;
 		};
-		BDFD33C11DBBC04500104198 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = NearbyPlaces;
-			targetProxy = BDFD33C01DBBC04500104198 /* PBXContainerItemProxy */;
-		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
@@ -415,6 +371,10 @@
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = NearbyRestaurantsTodayExtension/NearbyRestaurantsTodayExtension.entitlements;
 				DEVELOPMENT_TEAM = Z3QQ492P6Z;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = NearbyRestaurantsTodayExtension/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
@@ -432,6 +392,10 @@
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = NearbyRestaurantsTodayExtension/NearbyRestaurantsTodayExtension.entitlements;
 				DEVELOPMENT_TEAM = Z3QQ492P6Z;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = NearbyRestaurantsTodayExtension/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";

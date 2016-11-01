@@ -1,0 +1,10 @@
+framework module NearbyPlaces {
+  umbrella header "NearbyPlaces.h"
+
+  export *
+  module * { export * }
+}
+
+module NearbyPlaces.Swift {
+    header "NearbyPlaces-Swift.h"
+}
