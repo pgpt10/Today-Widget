@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="nearbyPlace" id="W48-aL-cy9" customClass="NearbyPlaceTableViewCell" customModule="NearbyRestaurants" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="104"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="W48-aL-cy9" id="HkJ-W7-RGA">
+                <frame key="frameInset" width="375" height="104"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="RestaurantIcon" translatesAutoresizingMaskIntoConstraints="NO" id="F3S-hu-9Fb">
+                        <constraints>
+                            <constraint firstAttribute="height" constant="88" id="RhY-gL-YFR"/>
+                            <constraint firstAttribute="width" constant="88" id="nVu-5b-AiB"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Realty Capital Infrastructure Shekhar Singh" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Efi-qd-BkN">
+                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="223, 2nd Floor Urbtech Matrix Tower, Sector 132, Noida" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="weG-G7-FFG">
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="Efi-qd-BkN" firstAttribute="leading" secondItem="F3S-hu-9Fb" secondAttribute="trailing" constant="8" id="7wB-9I-wRw"/>
+                    <constraint firstItem="Efi-qd-BkN" firstAttribute="top" secondItem="HkJ-W7-RGA" secondAttribute="top" constant="8" id="81m-o1-hrv"/>
+                    <constraint firstItem="Efi-qd-BkN" firstAttribute="leading" secondItem="weG-G7-FFG" secondAttribute="leading" id="ECZ-KV-Kbx"/>
+                    <constraint firstAttribute="bottom" secondItem="weG-G7-FFG" secondAttribute="bottom" constant="28.5" id="FSw-1y-20b"/>
+                    <constraint firstAttribute="trailing" secondItem="weG-G7-FFG" secondAttribute="trailing" constant="8" id="GTv-ru-NxF"/>
+                    <constraint firstAttribute="trailing" secondItem="Efi-qd-BkN" secondAttribute="trailing" constant="8" id="SSJ-RX-PfX"/>
+                    <constraint firstItem="F3S-hu-9Fb" firstAttribute="leading" secondItem="HkJ-W7-RGA" secondAttribute="leading" constant="8" id="Tzv-Wx-udQ"/>
+                    <constraint firstItem="F3S-hu-9Fb" firstAttribute="top" secondItem="HkJ-W7-RGA" secondAttribute="top" constant="8" id="b3L-m3-f2I"/>
+                    <constraint firstItem="weG-G7-FFG" firstAttribute="top" secondItem="Efi-qd-BkN" secondAttribute="bottom" id="kNu-iD-ZQJ"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="addressLabel" destination="weG-G7-FFG" id="Sga-CC-xcT"/>
+                <outlet property="iconImageView" destination="F3S-hu-9Fb" id="H75-Mf-yhd"/>
+                <outlet property="nameLabel" destination="Efi-qd-BkN" id="uZv-i5-9YQ"/>
+            </connections>
+            <point key="canvasLocation" x="-364.5" y="-317"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="RestaurantIcon" width="256" height="256"/>
+    </resources>
+</document>

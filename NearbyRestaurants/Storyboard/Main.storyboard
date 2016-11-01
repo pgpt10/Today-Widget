@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="RuW-6r-PgB">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Nearby Restaurants-->
+        <scene sceneID="fuC-u3-WSh">
+            <objects>
+                <viewController id="S5C-2x-ajC" customClass="NearbyRestaurantsViewController" customModule="NearbyRestaurants" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Uh6-pP-4I9"/>
+                        <viewControllerLayoutGuide type="bottom" id="ota-5g-B9i"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="EdV-PL-jR5">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="117" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="VHc-RE-B8R">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="S5C-2x-ajC" id="VND-JO-rRM"/>
+                                    <outlet property="delegate" destination="S5C-2x-ajC" id="rKX-rx-AWo"/>
+                                </connections>
+                            </tableView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="27o-ur-w27">
+                                <color key="color" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="27o-ur-w27" firstAttribute="centerY" secondItem="EdV-PL-jR5" secondAttribute="centerY" id="4q5-tm-h8T"/>
+                            <constraint firstItem="VHc-RE-B8R" firstAttribute="top" secondItem="EdV-PL-jR5" secondAttribute="top" id="ZUk-Yd-Bpr"/>
+                            <constraint firstItem="27o-ur-w27" firstAttribute="centerX" secondItem="EdV-PL-jR5" secondAttribute="centerX" id="bRi-Zp-D2y"/>
+                            <constraint firstItem="ota-5g-B9i" firstAttribute="top" secondItem="VHc-RE-B8R" secondAttribute="bottom" id="bYU-6S-qHU"/>
+                            <constraint firstAttribute="trailing" secondItem="VHc-RE-B8R" secondAttribute="trailing" id="pKT-I8-0AK"/>
+                            <constraint firstItem="VHc-RE-B8R" firstAttribute="leading" secondItem="EdV-PL-jR5" secondAttribute="leading" id="uI3-iq-frO"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Nearby Restaurants" id="LHs-bs-4ja">
+                        <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="4oR-ap-eb1">
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="refreshResults:" destination="S5C-2x-ajC" id="4IW-Ux-uyM"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="activityIndicator" destination="27o-ur-w27" id="RnQ-PO-JNK"/>
+                        <outlet property="tableView" destination="VHc-RE-B8R" id="qUu-ZA-vk3"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="efB-qX-Jqk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3042" y="-224"/>
+        </scene>
+        <!--Nearby Restaurant Detail View Controller-->
+        <scene sceneID="Fac-dK-M78">
+            <objects>
+                <viewController storyboardIdentifier="NearbyRestaurantDetailViewController" id="mi0-g7-8Ce" customClass="NearbyRestaurantDetailViewController" customModule="NearbyRestaurants" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="GS6-IR-uc4"/>
+                        <viewControllerLayoutGuide type="bottom" id="IcS-H8-wCv"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="eqA-xZ-1c9">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="752" text="Peniel Restaurant (South Indian, North Indian &amp; Chinese)" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="359" translatesAutoresizingMaskIntoConstraints="NO" id="UQx-cZ-PnA">
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="359" translatesAutoresizingMaskIntoConstraints="NO" id="B2a-ly-zmx">
+                                <string key="text">29, Behind Express Trade Towers 2, Near JBM School, Sector 132, B Block, Block A, Sector 132, Noida, Uttar Pradesh 201301, India</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Contact : 081305 44443" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gPj-QC-SMn">
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="FoK-bk-bAI">
+                                <color key="color" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            </activityIndicatorView>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Jbf-rl-iXN">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="aYT-G2-JMk">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="photoCell" id="QqA-E4-dqW" customClass="NearbyRestaurantPhotoCollectionViewCell" customModule="NearbyRestaurants" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="YEq-G6-W5S"/>
+                                            </subviews>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstItem="YEq-G6-W5S" firstAttribute="leading" secondItem="QqA-E4-dqW" secondAttribute="leading" id="SJO-bM-g6F"/>
+                                            <constraint firstItem="YEq-G6-W5S" firstAttribute="top" secondItem="QqA-E4-dqW" secondAttribute="top" id="Sr8-EH-9j8"/>
+                                            <constraint firstAttribute="trailing" secondItem="YEq-G6-W5S" secondAttribute="trailing" id="YHz-1S-jor"/>
+                                            <constraint firstAttribute="bottom" secondItem="YEq-G6-W5S" secondAttribute="bottom" id="s1I-eZ-yCJ"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="photoImageView" destination="YEq-G6-W5S" id="J74-xJ-DWt"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="mi0-g7-8Ce" id="vjZ-wx-QE1"/>
+                                    <outlet property="delegate" destination="mi0-g7-8Ce" id="b3y-Gf-x5y"/>
+                                </connections>
+                            </collectionView>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.45000000000000001" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Permanently Closed" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lVc-t8-b61">
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="26" id="7FK-BV-e8u"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="13"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Jbf-rl-iXN" firstAttribute="height" secondItem="eqA-xZ-1c9" secondAttribute="height" multiplier="2/5" id="1S9-7h-Qz3"/>
+                            <constraint firstAttribute="trailing" secondItem="UQx-cZ-PnA" secondAttribute="trailing" constant="8" id="1sH-5s-lwF"/>
+                            <constraint firstItem="B2a-ly-zmx" firstAttribute="leading" secondItem="eqA-xZ-1c9" secondAttribute="leading" constant="8" id="5gc-CZ-1cz"/>
+                            <constraint firstItem="lVc-t8-b61" firstAttribute="top" secondItem="Jbf-rl-iXN" secondAttribute="top" id="8EN-YJ-ovU"/>
+                            <constraint firstAttribute="trailing" secondItem="Jbf-rl-iXN" secondAttribute="trailing" id="Axa-Uk-jKY"/>
+                            <constraint firstItem="FoK-bk-bAI" firstAttribute="centerY" secondItem="eqA-xZ-1c9" secondAttribute="centerY" id="GAi-DG-kcT"/>
+                            <constraint firstItem="Jbf-rl-iXN" firstAttribute="top" secondItem="gPj-QC-SMn" secondAttribute="bottom" constant="8" id="GiI-eu-Czf"/>
+                            <constraint firstItem="B2a-ly-zmx" firstAttribute="top" secondItem="UQx-cZ-PnA" secondAttribute="bottom" constant="8" id="If1-hm-gy8"/>
+                            <constraint firstItem="gPj-QC-SMn" firstAttribute="leading" secondItem="eqA-xZ-1c9" secondAttribute="leading" constant="8" id="LIw-mm-DJa"/>
+                            <constraint firstItem="lVc-t8-b61" firstAttribute="leading" secondItem="eqA-xZ-1c9" secondAttribute="leading" id="OZN-iQ-nSM"/>
+                            <constraint firstAttribute="trailing" secondItem="gPj-QC-SMn" secondAttribute="trailing" constant="8" id="Toq-Wt-tN8"/>
+                            <constraint firstAttribute="trailing" secondItem="lVc-t8-b61" secondAttribute="trailing" id="Y3V-sT-m05"/>
+                            <constraint firstItem="UQx-cZ-PnA" firstAttribute="top" secondItem="GS6-IR-uc4" secondAttribute="bottom" constant="8" id="cfj-do-i5y"/>
+                            <constraint firstItem="Jbf-rl-iXN" firstAttribute="leading" secondItem="eqA-xZ-1c9" secondAttribute="leading" id="pa6-sc-xNV"/>
+                            <constraint firstItem="FoK-bk-bAI" firstAttribute="centerX" secondItem="eqA-xZ-1c9" secondAttribute="centerX" id="rZv-uC-SXL"/>
+                            <constraint firstAttribute="trailing" secondItem="B2a-ly-zmx" secondAttribute="trailing" constant="8" id="sfm-qY-cXj"/>
+                            <constraint firstItem="UQx-cZ-PnA" firstAttribute="leading" secondItem="eqA-xZ-1c9" secondAttribute="leading" constant="8" id="wox-or-XVV"/>
+                            <constraint firstItem="gPj-QC-SMn" firstAttribute="top" secondItem="B2a-ly-zmx" secondAttribute="bottom" constant="8" id="zNt-rZ-ct6"/>
+                        </constraints>
+                    </view>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <connections>
+                        <outlet property="activityIndicator" destination="FoK-bk-bAI" id="xZG-sb-2XT"/>
+                        <outlet property="address" destination="B2a-ly-zmx" id="msG-x3-2Qp"/>
+                        <outlet property="contact" destination="gPj-QC-SMn" id="8hh-ST-HSJ"/>
+                        <outlet property="name" destination="UQx-cZ-PnA" id="aTm-ZP-wDG"/>
+                        <outlet property="openOrClosed" destination="lVc-t8-b61" id="ZmP-bz-PE1"/>
+                        <outlet property="photosCollectionView" destination="Jbf-rl-iXN" id="KfE-4w-003"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cSE-8V-Y8e" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3684" y="-224.4377811094453"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="NJV-BZ-p6B">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="RuW-6r-PgB" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="jkd-nF-cRu">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="S5C-2x-ajC" kind="relationship" relationship="rootViewController" id="e6i-55-ZYa"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NQI-Dq-7KH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2168.8000000000002" y="-223.53823088455775"/>
+        </scene>
+    </scenes>
+</document>
