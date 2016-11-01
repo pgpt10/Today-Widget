@@ -12,6 +12,8 @@
   5. Updating Widget content
   6. Show/Hide widget from containing App (optional)
 
+4. Implementation in Swift 3.0
+
 # App Extension
 1. Introduced in iOS 8
 
