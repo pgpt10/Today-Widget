@@ -72,4 +72,5 @@ Use:
 
 to handle widget height changes. You don't need any explicit height constraint for this. Also explicit Show More/Show Less button is not required.
 
-Note: To show/hide widget from containing app - Search for "TODO" in project and follow the instructions.
+# Note: 
+To show/hide widget from containing app - Search for "TODO" in project and follow the instructions.
