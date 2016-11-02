@@ -36,6 +36,13 @@
 			remoteGlobalIDString = BDB1C4631DB8A71200253E7A;
 			remoteInfo = NearbyRestaurantsTodayExtension;
 		};
+		BDE2D98C1DC9C30E00CD5AAD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BDE2D9881DC9C30D00CD5AAD /* NearbyPlaces.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = BDE312D51DB6312B00BA431E;
+			remoteInfo = NearbyPlaces;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -73,6 +80,7 @@
 		BDB1C46D1DB8A71300253E7A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BDB85CF91DB627A6008F0E1E /* NearbyRestaurants.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NearbyRestaurants.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BDB85D181DB62A42008F0E1E /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		BDE2D9881DC9C30D00CD5AAD /* NearbyPlaces.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = NearbyPlaces.xcodeproj; path = NearbyPlaces/NearbyPlaces.xcodeproj; sourceTree = "<group>"; };
 		BDFD33D81DBBC16900104198 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BDFD33D91DBBC16900104198 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		BDFD33DB1DBBC16900104198 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -123,6 +131,7 @@
 		BDB85CF01DB627A6008F0E1E = {
 			isa = PBXGroup;
 			children = (
+				BDE2D9881DC9C30D00CD5AAD /* NearbyPlaces.xcodeproj */,
 				BDB85CFB1DB627A6008F0E1E /* NearbyRestaurants */,
 				BDB1C4671DB8A71200253E7A /* NearbyRestaurantsTodayExtension */,
 				BDB85CFA1DB627A6008F0E1E /* Products */,
@@ -160,6 +169,14 @@
 				BDB1C4651DB8A71200253E7A /* NotificationCenter.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BDE2D9891DC9C30D00CD5AAD /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				BDE2D98D1DC9C30E00CD5AAD /* NearbyPlaces.framework */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 		BDFD33D61DBBC16900104198 /* Storyboard */ = {
@@ -283,6 +300,12 @@
 			mainGroup = BDB85CF01DB627A6008F0E1E;
 			productRefGroup = BDB85CFA1DB627A6008F0E1E /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = BDE2D9891DC9C30D00CD5AAD /* Products */;
+					ProjectRef = BDE2D9881DC9C30D00CD5AAD /* NearbyPlaces.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				BDB85CF81DB627A6008F0E1E /* NearbyRestaurants */,
@@ -290,6 +313,16 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		BDE2D98D1DC9C30E00CD5AAD /* NearbyPlaces.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = NearbyPlaces.framework;
+			remoteRef = BDE2D98C1DC9C30E00CD5AAD /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		BDB1C4621DB8A71200253E7A /* Resources */ = {
