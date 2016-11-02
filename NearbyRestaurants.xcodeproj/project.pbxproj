@@ -7,15 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		BD100D7C1DC8C69F000C7A09 /* NearbyPlaces.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD100D7A1DC8C680000C7A09 /* NearbyPlaces.framework */; };
-		BD100D7D1DC8C69F000C7A09 /* NearbyPlaces.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BD100D7A1DC8C680000C7A09 /* NearbyPlaces.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		BD100D7E1DC8C6BC000C7A09 /* NearbyPlaces.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD100D7A1DC8C680000C7A09 /* NearbyPlaces.framework */; };
 		BD21F0891DBBC28E00ECA962 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BD21F0881DBBC28E00ECA962 /* Info.plist */; };
 		BDB1C4661DB8A71200253E7A /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDB1C4651DB8A71200253E7A /* NotificationCenter.framework */; };
 		BDB1C4691DB8A71200253E7A /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDB1C4681DB8A71200253E7A /* TodayViewController.swift */; };
 		BDB1C46C1DB8A71300253E7A /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BDB1C46A1DB8A71300253E7A /* MainInterface.storyboard */; };
 		BDB1C4701DB8A71300253E7A /* NearbyRestaurantsTodayExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = BDB1C4641DB8A71200253E7A /* NearbyRestaurantsTodayExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		BDB85D191DB62A42008F0E1E /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDB85D181DB62A42008F0E1E /* CoreLocation.framework */; };
+		BDE2D98E1DC9C3BF00CD5AAD /* NearbyPlaces.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDE2D98D1DC9C30E00CD5AAD /* NearbyPlaces.framework */; };
+		BDE2D98F1DC9C3BF00CD5AAD /* NearbyPlaces.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BDE2D98D1DC9C30E00CD5AAD /* NearbyPlaces.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		BDE2D9931DC9C3C900CD5AAD /* NearbyPlaces.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDE2D98D1DC9C30E00CD5AAD /* NearbyPlaces.framework */; };
 		BDFD33E41DBBC16900104198 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BDFD33D71DBBC16900104198 /* LaunchScreen.storyboard */; };
 		BDFD33E51DBBC16900104198 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BDFD33D91DBBC16900104198 /* Main.storyboard */; };
 		BDFD33E61DBBC16900104198 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BDFD33DB1DBBC16900104198 /* Assets.xcassets */; };
@@ -43,6 +43,13 @@
 			remoteGlobalIDString = BDE312D51DB6312B00BA431E;
 			remoteInfo = NearbyPlaces;
 		};
+		BDE2D9901DC9C3BF00CD5AAD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BDE2D9881DC9C30D00CD5AAD /* NearbyPlaces.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = BDE312D41DB6312B00BA431E;
+			remoteInfo = NearbyPlaces;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -57,13 +64,13 @@
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		BDFD33C21DBBC04500104198 /* Embed Frameworks */ = {
+		BDE2D9921DC9C3BF00CD5AAD /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				BD100D7D1DC8C69F000C7A09 /* NearbyPlaces.framework in Embed Frameworks */,
+				BDE2D98F1DC9C3BF00CD5AAD /* NearbyPlaces.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -71,7 +78,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		BD100D7A1DC8C680000C7A09 /* NearbyPlaces.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = NearbyPlaces.framework; sourceTree = "<group>"; };
 		BD21F0881DBBC28E00ECA962 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BDB1C4641DB8A71200253E7A /* NearbyRestaurantsTodayExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = NearbyRestaurantsTodayExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		BDB1C4651DB8A71200253E7A /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
@@ -101,7 +107,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BDB1C4661DB8A71200253E7A /* NotificationCenter.framework in Frameworks */,
-				BD100D7E1DC8C6BC000C7A09 /* NearbyPlaces.framework in Frameworks */,
+				BDE2D9931DC9C3C900CD5AAD /* NearbyPlaces.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -110,7 +116,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BDB85D191DB62A42008F0E1E /* CoreLocation.framework in Frameworks */,
-				BD100D7C1DC8C69F000C7A09 /* NearbyPlaces.framework in Frameworks */,
+				BDE2D98E1DC9C3BF00CD5AAD /* NearbyPlaces.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -164,7 +170,6 @@
 		BDB85D171DB62A42008F0E1E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				BD100D7A1DC8C680000C7A09 /* NearbyPlaces.framework */,
 				BDB85D181DB62A42008F0E1E /* CoreLocation.framework */,
 				BDB1C4651DB8A71200253E7A /* NotificationCenter.framework */,
 			);
@@ -245,12 +250,13 @@
 				BDB85CF61DB627A6008F0E1E /* Frameworks */,
 				BDB85CF71DB627A6008F0E1E /* Resources */,
 				BDB1C4741DB8A71300253E7A /* Embed App Extensions */,
-				BDFD33C21DBBC04500104198 /* Embed Frameworks */,
+				BDE2D9921DC9C3BF00CD5AAD /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 				BDB1C46F1DB8A71300253E7A /* PBXTargetDependency */,
+				BDE2D9911DC9C3BF00CD5AAD /* PBXTargetDependency */,
 			);
 			name = NearbyRestaurants;
 			productName = NearbyRestaurants;
@@ -376,6 +382,11 @@
 			isa = PBXTargetDependency;
 			target = BDB1C4631DB8A71200253E7A /* NearbyRestaurantsTodayExtension */;
 			targetProxy = BDB1C46E1DB8A71300253E7A /* PBXContainerItemProxy */;
+		};
+		BDE2D9911DC9C3BF00CD5AAD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = NearbyPlaces;
+			targetProxy = BDE2D9901DC9C3BF00CD5AAD /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
