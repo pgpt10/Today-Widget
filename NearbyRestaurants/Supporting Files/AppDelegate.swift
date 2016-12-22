@@ -35,8 +35,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 detailController.nearbyRestaurantID = placeID
                 (self.window?.rootViewController as! UINavigationController).pushViewController(detailController, animated: true)
             }
-//            let alert = UIAlertView.init(title: "Alert", message: placeID , delegate: nil, cancelButtonTitle: "OK")
-//            alert.show()
         }
         return true
     }

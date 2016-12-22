@@ -14,7 +14,7 @@ class TodayViewController: UIViewController
 {
     //MARK: Outlets
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var showMoreButton: UIButton!
+    @IBOutlet weak var showMoreButton: UIButton! //For iOS-8 and iOS-9
 
     //MARK: Private Properties
     fileprivate let kCellHeight : CGFloat = 84.0
@@ -33,6 +33,7 @@ class TodayViewController: UIViewController
 
         if #available(iOSApplicationExtension 10.0, *)
         {
+            //If widgetLargestAvailableDisplayMode is set to .compact, then we won't have Show More/Show Less button
             self.extensionContext?.widgetLargestAvailableDisplayMode = .expanded
             self.showMoreButton.removeFromSuperview()
         }
@@ -77,6 +78,7 @@ class TodayViewController: UIViewController
     }
     
     //MARK: Button Action Methods
+    //For iOS-8 and iOS-9
     @IBAction func showMoreRestaurants(_ sender: UIButton)
     {
         self.fetchDataFromSharedContainer()
@@ -139,6 +141,7 @@ extension TodayViewController : UITableViewDataSource, UITableViewDelegate
 // MARK: - NCWidgetProviding Methods
 extension TodayViewController : NCWidgetProviding
 {
+    //For iOS-8 and iOS-9
     func widgetMarginInsets(forProposedMarginInsets defaultMarginInsets: UIEdgeInsets) -> UIEdgeInsets
     {
         return UIEdgeInsets.zero
@@ -159,6 +162,7 @@ extension TodayViewController : NCWidgetProviding
     }
     
     @available(iOSApplicationExtension 10.0, *)
+    //Minimum height of widget in iOS-10 is 110 i.e, for compact display mode
     func widgetActiveDisplayModeDidChange(_ activeDisplayMode: NCWidgetDisplayMode, withMaximumSize maxSize: CGSize)
     {
         if activeDisplayMode == .expanded
