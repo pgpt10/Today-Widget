@@ -8,14 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		BDE312DA1DB6312B00BA431E /* NearbyPlaces.h in Headers */ = {isa = PBXBuildFile; fileRef = BDE312D81DB6312B00BA431E /* NearbyPlaces.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		BDE312E51DB6316100BA431E /* NearbyPlaceDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE312E41DB6316100BA431E /* NearbyPlaceDetail.swift */; };
+		BDE312E51DB6316100BA431E /* NearbyPlaceEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE312E41DB6316100BA431E /* NearbyPlaceEntity.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		BDE312D51DB6312B00BA431E /* NearbyPlaces.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = NearbyPlaces.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BDE312D81DB6312B00BA431E /* NearbyPlaces.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NearbyPlaces.h; sourceTree = "<group>"; };
 		BDE312D91DB6312B00BA431E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		BDE312E41DB6316100BA431E /* NearbyPlaceDetail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NearbyPlaceDetail.swift; sourceTree = "<group>"; };
+		BDE312E41DB6316100BA431E /* NearbyPlaceEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NearbyPlaceEntity.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,7 +48,7 @@
 		BDE312D71DB6312B00BA431E /* NearbyPlaces */ = {
 			isa = PBXGroup;
 			children = (
-				BDE312E41DB6316100BA431E /* NearbyPlaceDetail.swift */,
+				BDE312E41DB6316100BA431E /* NearbyPlaceEntity.swift */,
 				BDE312D81DB6312B00BA431E /* NearbyPlaces.h */,
 				BDE312D91DB6312B00BA431E /* Info.plist */,
 			);
@@ -99,7 +99,7 @@
 					BDE312D41DB6312B00BA431E = {
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = Z3QQ492P6Z;
-						LastSwiftMigration = 0800;
+						LastSwiftMigration = 0820;
 						ProvisioningStyle = Manual;
 					};
 				};
@@ -136,7 +136,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BDE312E51DB6316100BA431E /* NearbyPlaceDetail.swift in Sources */,
+				BDE312E51DB6316100BA431E /* NearbyPlaceEntity.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

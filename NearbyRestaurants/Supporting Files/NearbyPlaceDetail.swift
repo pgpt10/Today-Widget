@@ -1,51 +1,66 @@
 //
 //  NearbyPlaceDetail.swift
-//  NearbyPlaces
+//  NearbyRestaurants
 //
-//  Created by Payal Gupta on 10/18/16.
+//  Created by Payal Gupta on 12/22/16.
 //  Copyright © 2016 Infoedge Pvt. Ltd. All rights reserved.
 //
 
-import UIKit
+import Foundation
+import NearbyPlaces
 import CoreLocation
 
-let kGoogleAPIKey : String = "AIzaSyA-80bYgdT6jJdi-K7SQQ4gqkHms3t4jP4"
-
-public class NearbyPlaceEntity : NSObject, NSCoding
+public class NearbyPlaceDetail : NearbyPlaceEntity
 {
     //MARK: Internal Properties
-    public let name : String
-    public let address : String
-    public let placeID : String
-    public var icon : String?
+    public var completeAddress : String?
+    public var phoneNumber : String?
+    public var openNow : Bool
+    public var permanentlyClosed : Bool
+    public var weekDayText : [String]?
+    public var photosIDs : [String]?
+    public var googlePageURL : String?
+    public var websiteURL : String?
+    public var rating : Double?
     
     //MARK: Initializer
-    init?(jsonDictionary : [String : AnyObject])
+    override init?(jsonDictionary : [String : AnyObject])
     {
-        guard let name =  jsonDictionary["name"] as? String, let placeID = jsonDictionary["place_id"] as? String, let address =  jsonDictionary["vicinity"] as? String else
+        self.completeAddress = jsonDictionary["formatted_address"] as? String
+        self.phoneNumber = jsonDictionary["formatted_phone_number"] as? String
+        if let openingHours = jsonDictionary["opening_hours"] as? [String : AnyObject]
         {
-            return nil
+            if let openNow = openingHours["open_now"] as? Bool
+            {
+                self.openNow = openNow
+            }
+            else
+            {
+                self.openNow = false
+            }
+            self.weekDayText = openingHours["weekday_text"] as? [String]
         }
-        self.name = name
-        self.placeID = placeID
-        self.address = address
-        self.icon = jsonDictionary["icon"] as? String
+        else
+        {
+            self.openNow = false
+        }
+        self.permanentlyClosed = (jsonDictionary["permanently_closed"] as? Bool) ?? false
+        if let photosArray = jsonDictionary["photos"] as? [[String : AnyObject]], photosArray.count > 0
+        {
+            self.photosIDs = [String]()
+            for photo in photosArray
+            {
+                self.photosIDs?.addObject(photo["photo_reference"] as? String)
+            }
+        }
+        self.googlePageURL = jsonDictionary["url"] as? String
+        self.websiteURL = jsonDictionary["website"] as? String
+        self.rating = jsonDictionary["rating"] as? Double
+        super.init(jsonDictionary: jsonDictionary)
     }
     
-    required public init?(coder aDecoder: NSCoder)
-    {
-        self.name = aDecoder.decodeObject(forKey: "name") as! String
-        self.address = aDecoder.decodeObject(forKey: "address") as! String
-        self.placeID = aDecoder.decodeObject(forKey: "placeID") as! String
-        self.icon = aDecoder.decodeObject(forKey: "icon") as? String
-    }
-    
-    public func encode(with aCoder: NSCoder)
-    {
-        aCoder.encode(self.name, forKey: "name")
-        aCoder.encode(self.address, forKey: "address")
-        aCoder.encode(self.placeID, forKey: "placeID")
-        aCoder.encode(self.icon, forKey: "icon")
+    required public init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     
     //MARK: Type Methods
@@ -132,62 +147,7 @@ public class NearbyPlaceEntity : NSObject, NSCoding
         })
         task.resume()
     }
-}
 
-public class NearbyPlaceDetail : NearbyPlaceEntity
-{
-    //MARK: Internal Properties
-    public var completeAddress : String?
-    public var phoneNumber : String?
-    public var openNow : Bool
-    public var permanentlyClosed : Bool
-    public var weekDayText : [String]?
-    public var photosIDs : [String]?
-    public var googlePageURL : String?
-    public var websiteURL : String?
-    public var rating : Double?
-    
-    //MARK: Initializer
-    override init?(jsonDictionary : [String : AnyObject])
-    {
-        self.completeAddress = jsonDictionary["formatted_address"] as? String
-        self.phoneNumber = jsonDictionary["formatted_phone_number"] as? String
-        if let openingHours = jsonDictionary["opening_hours"] as? [String : AnyObject]
-        {
-            if let openNow = openingHours["open_now"] as? Bool
-            {
-                self.openNow = openNow
-            }
-            else
-            {
-                self.openNow = false
-            }
-            self.weekDayText = openingHours["weekday_text"] as? [String]
-        }
-        else
-        {
-            self.openNow = false
-        }
-        self.permanentlyClosed = (jsonDictionary["permanently_closed"] as? Bool) ?? false
-        if let photosArray = jsonDictionary["photos"] as? [[String : AnyObject]], photosArray.count > 0
-        {
-            self.photosIDs = [String]()
-            for photo in photosArray
-            {
-                self.photosIDs?.addObject(photo["photo_reference"] as? String)
-            }
-        }
-        self.googlePageURL = jsonDictionary["url"] as? String
-        self.websiteURL = jsonDictionary["website"] as? String
-        self.rating = jsonDictionary["rating"] as? Double
-        super.init(jsonDictionary: jsonDictionary)
-    }
-    
-    required public init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
-    //MARK: Type Methods
     /**
      Google Place Detail API hit
      
@@ -287,4 +247,3 @@ extension Array
         }
     }
 }
-

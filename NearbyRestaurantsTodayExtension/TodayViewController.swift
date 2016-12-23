@@ -17,7 +17,7 @@ class TodayViewController: UIViewController
     @IBOutlet weak var showMoreButton: UIButton! //For iOS-8 and iOS-9
 
     //MARK: Private Properties
-    fileprivate let kCellHeight : CGFloat = 84.0
+    fileprivate let kCellHeight : CGFloat = 90.0
     fileprivate var nearbyRestaurantsArray = [NearbyPlaceEntity]()
     private let kAppGroupName = "group.com.infoedge.NearbyRestaurantsSample"
     private var sharedContainer : UserDefaults?
@@ -128,6 +128,47 @@ extension TodayViewController : UITableViewDataSource, UITableViewDelegate
         }
         cell.textLabel?.text = (self.nearbyRestaurantsArray.count == 0) ? nil : self.nearbyRestaurantsArray[indexPath.row].name
         cell.detailTextLabel?.text = (self.nearbyRestaurantsArray.count == 0) ? "No recently viewed restaurants. Tap and open the app to view nearby restaurant." : self.nearbyRestaurantsArray[indexPath.row].address
+        if self.nearbyRestaurantsArray.count == 0
+        {
+            cell.imageView?.image = nil
+        }
+        else
+        {
+            if let urlString = self.nearbyRestaurantsArray[indexPath.row].icon
+            {
+                if let cachedFileData = Cacher.cachedDataforKey(urlString)
+                {
+                    let image = UIImage(data: cachedFileData)
+                    cell.imageView?.image = image
+                }
+                else
+                {
+                    if let url = URL(string: urlString)
+                    {
+                        let urlRequest = URLRequest(url: url)
+                        NSURLConnection.sendAsynchronousRequest(urlRequest, queue: OperationQueue.main, completionHandler: {(response, data, error) in
+                            if let imageData = data, let builderLogoImage = UIImage(data: imageData)
+                            {
+                                Cacher.cacheData(imageData, forKey: urlString)
+                                cell.imageView?.image = builderLogoImage
+                            }
+                            else
+                            {
+                                cell.imageView?.image = #imageLiteral(resourceName: "RestaurantIcon")
+                            }
+                        })
+                    }
+                    else
+                    {
+                        cell.imageView?.image = #imageLiteral(resourceName: "RestaurantIcon")
+                    }
+                }
+            }
+            else
+            {
+                cell.imageView?.image = #imageLiteral(resourceName: "RestaurantIcon")
+            }
+        }
         return cell
     }
     
@@ -167,7 +208,7 @@ extension TodayViewController : NCWidgetProviding
     {
         if activeDisplayMode == .expanded
         {
-            preferredContentSize = CGSize(width: 0.0, height: kCellHeight * CGFloat(self.nearbyRestaurantsArray.count) + 16)
+            preferredContentSize = CGSize(width: 0.0, height: kCellHeight * CGFloat(self.nearbyRestaurantsArray.count))
         }
         else
         {

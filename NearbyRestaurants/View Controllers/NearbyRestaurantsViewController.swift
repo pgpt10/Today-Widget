@@ -18,6 +18,16 @@ class NearbyRestaurantsViewController: UIViewController
     fileprivate var currentLocation : CLLocation?
     private let kAppGroupName = "group.com.infoedge.NearbyRestaurantsSample"
     private var sharedContainer : UserDefaults?
+    fileprivate lazy var totalCountAllowed : Int = {
+        switch UIScreen.main.bounds.height
+        {
+        case 480: return 3
+        case 568 : return 4
+        case 667 : return 5
+        case 736 : return 5
+        default : return 3
+        }
+    }()
 
     //MARK: Outlets
     @IBOutlet weak var tableView: UITableView!
@@ -51,7 +61,7 @@ class NearbyRestaurantsViewController: UIViewController
         if let currentLocation = self.currentLocation
         {
             self.activityIndicator.startAnimating()
-            NearbyPlaceEntity.fetchNearByGooglePlacesForCoordinate(currentLocation.coordinate, inRadius: 500, forAmenityType: "restaurant") {[weak self] (responseObject, error) in
+            NearbyPlaceDetail.fetchNearByGooglePlacesForCoordinate(currentLocation.coordinate, inRadius: 500, forAmenityType: "restaurant") {[weak self] (responseObject, error) in
                 self?.activityIndicator.stopAnimating()
                 guard let nearbyRestaurantsArray = responseObject as? [NearbyPlaceEntity] else
                 {
@@ -108,7 +118,7 @@ class NearbyRestaurantsViewController: UIViewController
                         return
                     }
                 }
-                if dataArray!.count == 5
+                if dataArray!.count == self.totalCountAllowed
                 {
                     dataArray!.removeFirst()
                 }
@@ -144,20 +154,35 @@ extension NearbyRestaurantsViewController : UITableViewDataSource, UITableViewDe
         cell.nameLabel.text = self.nearbyRestaurantsArray[indexPath.row].name
         cell.addressLabel.text = self.nearbyRestaurantsArray[indexPath.row].address
         
-        if let iconString = self.nearbyRestaurantsArray[indexPath.row].icon
+        if let urlString = self.nearbyRestaurantsArray[indexPath.row].icon
         {
-            let task = URLSession.shared.dataTask(with: URL(string: iconString)!) { (data, response, error) in
-                if let data = data
+            if let cachedFileData = Cacher.cachedDataforKey(urlString)
+            {
+                let image = UIImage(data: cachedFileData)
+                cell.iconImageView.image = image
+            }
+            else
+            {
+                if let url = URL(string: urlString)
                 {
-                    let image = UIImage(data: data)
-                    cell.iconImageView.image = image
+                    let urlRequest = URLRequest(url: url)
+                    NSURLConnection.sendAsynchronousRequest(urlRequest, queue: OperationQueue.main, completionHandler: {(response, data, error) in
+                        if let imageData = data, let builderLogoImage = UIImage(data: imageData)
+                        {
+                            Cacher.cacheData(imageData, forKey: urlString)
+                            cell.iconImageView.image = builderLogoImage
+                        }
+                        else
+                        {
+                            cell.iconImageView.image = #imageLiteral(resourceName: "RestaurantIcon")
+                        }
+                    })
                 }
                 else
                 {
                     cell.iconImageView.image = #imageLiteral(resourceName: "RestaurantIcon")
                 }
             }
-            task.resume()
         }
         else
         {
