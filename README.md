@@ -14,7 +14,10 @@
 
 4. Implementation in Swift 3.0
 
-# App Extension
+## Preview
+
+
+## App Extension
 1. Introduced in iOS 8
 
 2. An app extension lets you extend custom functionality and content beyond your app and make it available to users while they’re interacting with other apps or the system.
@@ -23,7 +26,7 @@
 
 4. Not an app
 
-# Terminology
+## Terminology
 1. Containing App - The app for which extension is created
 
 2. Types of Extensions - Today(Widget), Share, Custom Keyboard, Photo Editing etc.
@@ -38,7 +41,7 @@
 
 5.  Host App - App from which the extension is launched
 
-# Project Details
+## Project Details
 
 This project contains 3 things:
 
@@ -48,7 +51,7 @@ This project contains 3 things:
 
 3. Framework : App and widget both share some of the code. So, a framework is created that contains the code common to both App and widget.
 
-# Things to do on Apple Developer Portal
+## Things to do on Apple Developer Portal
 
 1. Create App ID for Containing App
 2. Create App ID for Extension
@@ -58,13 +61,13 @@ This project contains 3 things:
 6. Create Provision Profile for App ID of Containing App
 7. Create Provision Profile for App ID of Extension
 
-# iOS 8 and iOS 9 implementaion details
+## iOS 8 and iOS 9 implementaion details
 
 For iOS 8 and iOS 9, the height changes are to be handled explicitly. For this auto-layout is used. Show More/Show Less functionality need to be provided explicitly.
 Show More - increases the table height constraint according to the content
 Show Less - decreases the table height constraint to show only single row.
 
-# iOS 10 implementation details
+## iOS 10 implementation details
 
 In iOS 10, Show More/Show Less functionality is provided by the API itself. 
 Use:
@@ -74,5 +77,5 @@ Use:
 
 to handle widget height changes. You don't need any explicit height constraint for this. Also explicit Show More/Show Less button is not required.
 
-# Note: 
+### Note: 
 To show/hide widget from containing app - Search for "TODO" in project and follow the instructions.
