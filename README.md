@@ -15,7 +15,7 @@
 4. Implementation in Swift 3.0
 
 ## Preview
-
+<img src="https://github.com/pgpt10/Today-Widget/blob/master/Screenshot.PNG"  width='300' height='534' alt="Preview gif">
 
 ## App Extension
 1. Introduced in iOS 8
