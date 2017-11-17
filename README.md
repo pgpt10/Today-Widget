@@ -41,6 +41,9 @@
 
 5.  Host App - App from which the extension is launched
 
+## Today Extension (Widget)
+<a href="https://hackernoon.com/app-extensions-and-today-extensions-widget-in-ios-10-e2d9fd9957a8">Here</a> you can find the complete implementation details as well the common issues faced while implementing today extension in you app.
+
 ## Project Details
 
 This project contains 3 things:
